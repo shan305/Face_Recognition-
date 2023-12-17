@@ -6,7 +6,8 @@ from tensorflow.keras.models import load_model
 
 import matplotlib.pyplot as plt
 import os
-
+print(cv2.__version__)
+print(np.__version__)
 def load_video_frames(video_path):
     cap = cv2.VideoCapture(video_path)
     frames = []
@@ -154,7 +155,7 @@ def save_and_export(frames, predictions, model, output_directory, output_filenam
         print("VideoWriter released.")
 
 # Main script
-video_path = 'production_id_5125962 (2160p).mp4'
+video_path = 'video.mp4'
 output_directory = 'output'
 output_filename = 'output.mp4'
 model_path = 'face_recognition_model.keras'
@@ -181,7 +182,7 @@ save_model(model, model_path)
 model = load_model(model_path)
 
 # Process new video frames
-video_path_new = 'production_id_5125962 (2160p).mp4'
+video_path_new = 'video.mp4'
 new_frames = load_video_frames(video_path_new)
 
 # Process frames and make predictions
