@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, Flatten, Dense
+from tensorflow.keras.models import load_model
 
 import matplotlib.pyplot as plt
 import os
@@ -157,7 +158,12 @@ video_path = 'production_id_5125962 (2160p).mp4'
 output_directory = 'output'
 output_filename = 'output.mp4'
 model_path = 'face_recognition_model.keras'
+import os
 
+if os.path.exists(video_path):
+    print("Video file exists.")
+else:
+    print("Error: Video file not found.")
 # Load video frames
 frames = load_video_frames(video_path)
 
