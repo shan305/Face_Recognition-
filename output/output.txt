@@ -1,0 +1,42 @@
+Epoch 1/10
+9/9 [==============================] - 4s 243ms/step - loss: 0.7308 - accuracy: 0.9656
+Epoch 2/10
+9/9 [==============================] - 2s 218ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 3/10
+9/9 [==============================] - 2s 215ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 4/10
+9/9 [==============================] - 2s 222ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 5/10
+9/9 [==============================] - 2s 218ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 6/10
+9/9 [==============================] - 2s 215ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 7/10
+9/9 [==============================] - 2s 223ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 8/10
+9/9 [==============================] - 2s 211ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 9/10
+9/9 [==============================] - 2s 219ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+Epoch 10/10
+9/9 [==============================] - 2s 228ms/step - loss: 0.0000e+00 - accuracy: 1.0000
+<keras.src.callbacks.History at 0x153616d90>
+
+
+
+It looks like the addition of the dropout layer has not affected the training in this case, and model is still achieving perfect accuracy on the training data. Achieving 100% accuracy on the training set could indicate overfitting, as the model might be memorizing the training data and not generalizing well to new, unseen data.
+
+Here is why? We need more data not just one video. we need preprocessing tehniques but it wasnt the aprt of the scopr for this section. we need more iterations
+
+Here is how to address overfitting and improve generalization:
+
+Validation Set: Split dataset into training and validation sets. Train the model on the training set and monitor its performance on the validation set. If the model performs well on the training set but poorly on the validation set, it might be overfitting.
+
+Data Augmentation: Apply data augmentation techniques to artificially increase the diversity of training set. This can include random rotations, flips, and zooms on the training images.
+
+Reduce Model Complexity: If overfitting persists, consider reducing the complexity of your model. This could involve reducing the number of layers, neurons, or adding dropout layers to introduce regularization.
+
+Learning Rate: Experiment with adjusting the learning rate. Too high of a learning rate may cause the model to converge too quickly, potentially overshooting the optimal weights.
+
+Evaluate on Test Data: After training, evaluate the model on a separate test dataset that it has never seen before. This provides a more realistic estimate of the model's performance on new, unseen data.
+
+Note finding the right balance often involves experimentation and tuning hyperparameters. If the model is still not performing as expected, we need to further investigate data and training process.
+

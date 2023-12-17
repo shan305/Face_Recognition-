@@ -24,11 +24,12 @@ Before running the script, make sure you have the following dependencies install
 - NumPy
 - TensorFlow
 - Matplotlib
-
+-mageio[ffmpeg]
 You can install the dependencies using the following command:
 
 ```bash
 pip install opencv-python numpy tensorflow matplotlib
+pip install 'imageio[ffmpeg]'
 ```
 
 ## Usage
@@ -64,6 +65,26 @@ Adjust the following parameters in the script according to your requirements:
 - `output_directory`: Path to the directory where the output video will be saved.
 - `output_filename`: Name of the output video file.
 - `model_path`: Path to save/load the trained face recognition model.
+
+
+## Considertaion
+
+Here is how to address overfitting and improve generalization:
+
+**Validation Set:** Split dataset into training and validation sets. Train the model on the training set and monitor its performance on the validation set. If the model performs well on the training set but poorly on the validation set, it might be overfitting.
+
+**Data Augmentation:** Apply data augmentation techniques to artificially increase the diversity of training set. This can include random rotations, flips, and zooms on the training images.
+
+**Reduce Model Complexity:** If overfitting persists, consider reducing the complexity of your model. This could involve reducing the number of layers, neurons, or adding dropout layers to introduce regularization.
+
+**Learning Rate:** Experiment with adjusting the learning rate. Too high of a learning rate may cause the model to converge too quickly, potentially overshooting the optimal weights.
+
+**Evaluate on Test Data:** After training, evaluate the model on a separate test dataset that it has never seen before. This provides a more realistic estimate of the model's performance on new, unseen data.
+
+**Note** finding the right balance often involves experimentation and tuning hyperparameters. If the model is still not performing as expected, we need to further investigate data and training process.
+
+
+
 
 ## License
 
