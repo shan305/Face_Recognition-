@@ -68,7 +68,7 @@ def train_model(X, y):
 
 def save_model(model, model_path):
     model.save(model_path)
-    print(f"Model saved at {model_path}")
+    print("Model saved at {}".format(model_path))
 
 def process_frames(frames, model):
     predictions = []
