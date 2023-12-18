@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Python script utilizes OpenCV and TensorFlow/Keras to perform face recognition on video frames. The script loads a pre-trained model, detects faces in the frames, and recognizes them using the trained model.
+This Python project utilizes OpenCV and TensorFlow/Keras to perform face recognition on video frames. The script loads a pre-trained model, detects faces in the frames, and recognizes them using the trained model.
 
 ## Features
 
